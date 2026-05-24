@@ -1,0 +1,23 @@
+services:
+  kratos-uploader:
+    build: .
+    image: kratos-uploader:latest
+    container_name: kratos-uploader
+    restart: unless-stopped
+    # Run as the NAS `admin` uid:gid so we inherit Synology ACLs on the watched share.
+    user: "1024:100"
+    environment:
+      REPO_URL: https://github.com/oveku/kratos.git
+      BRANCH: main
+      GIT_USER_NAME: Klaudetteoveq
+      GIT_USER_EMAIL: klaudette@local
+      ACTIVE_START_HOUR: "6"
+      ACTIVE_END_HOUR: "20"
+      INTERVAL_SECONDS: "900"
+      GITHUB_TOKEN: ${GITHUB_TOKEN}
+    volumes:
+      # On the NAS, /volume1/Download/kratos-workouts is where Klaudette's SMB writes land.
+      - /volume1/Download/kratos-workouts:/watch
+      # Persist the cloned repo on the NAS filesystem so admin (1024) owns it
+      # and we don't re-clone every restart.
+      - /volume1/docker/kratos-uploader/work:/work

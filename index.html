@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Kratos · Training Translator</title>
+  <meta name="description" content="Kratos parses your weekly strength program (Norwegian CSV export) and explains every exercise in plain English.">
+  <meta name="theme-color" content="#09090d">
+  <link rel="stylesheet" href="./assets/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">Κ</span>
+      <span class="brand-name">Kratos</span>
+    </div>
+    <nav class="top-nav" id="week-nav" aria-label="Weeks"></nav>
+    <div class="top-actions">
+      <label class="button primary small" for="file-input">Upload</label>
+      <input id="file-input" type="file" accept=".csv,text/csv" multiple hidden>
+      <button id="btn-reset" class="button ghost small" type="button" title="Remove uploaded weeks and restore the default 9-week program">Reset</button>
+    </div>
+  </header>
+
+  <main class="shell" id="app">
+    <section id="empty" class="hero" aria-label="Get started" hidden>
+      <p class="eyebrow">Strength · Discipline · Execution</p>
+      <h1>Kratos</h1>
+      <p class="tagline">Your program, in plain English.</p>
+      <p class="intro">Loading the 9-week program…</p>
+    </section>
+
+    <section id="program" hidden>
+      <header class="program-header">
+        <h2 id="week-title" class="week-title"></h2>
+        <p id="week-subtitle" class="week-subtitle"></p>
+      </header>
+      <div class="day-tabs" id="day-tabs" role="tablist" aria-label="Days"></div>
+      <div id="day-body" class="day-body"></div>
+    </section>
+  </main>
+
+  <footer>
+    <span id="year"></span> · Kratos · <a href="https://github.com/oveku/kratos" target="_blank" rel="noreferrer">source</a>
+  </footer>
+
+  <script src="./assets/script.js" type="module"></script>
+</body>
+</html>

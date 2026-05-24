@@ -1,0 +1,130 @@
+{
+  "_about": "Norwegian → English translation of exercises and trainer terminology used in the program. Keys are normalized (lowercased, punctuation stripped, single-spaced).",
+  "entries": {
+    "knebøy": {
+      "name": "Back Squat",
+      "muscles": "Quads, glutes, lower back",
+      "how": "Bar on upper back. Brace, break at hips and knees together, sit down to at least parallel, drive up through midfoot.",
+      "video": "https://www.youtube.com/results?search_query=back+squat+form"
+    },
+    "knebøy konkstil": {
+      "name": "Back Squat (competition style)",
+      "muscles": "Quads, glutes, lower back",
+      "how": "Powerlifting-style back squat: same low-bar setup, stance and depth you would use on the platform. Hit competition depth — hip crease below the top of the knee — and drive up.",
+      "video": "https://www.youtube.com/results?search_query=competition+back+squat"
+    },
+    "knebøy mstopp": {
+      "name": "Pause Squat",
+      "muscles": "Quads, glutes",
+      "how": "Back squat with a 1–3 second pause at the bottom — no bounce. Builds strength out of the hole and reinforces a tight bottom position.",
+      "video": "https://www.youtube.com/results?search_query=pause+squat"
+    },
+    "markløft": {
+      "name": "Deadlift",
+      "muscles": "Posterior chain (hamstrings, glutes, back), grip",
+      "how": "Bar over midfoot. Hinge down, grip the bar, chest up, pull the slack out, then push the floor away and stand tall.",
+      "video": "https://www.youtube.com/results?search_query=deadlift+form"
+    },
+    "markløft konkstil": {
+      "name": "Deadlift (competition style)",
+      "muscles": "Posterior chain, grip",
+      "how": "Competition deadlift: stance, grip and lockout as you would on the platform. Stand tall with shoulders back, no hitching, no soft-knee lockout.",
+      "video": "https://www.youtube.com/results?search_query=competition+deadlift"
+    },
+    "benkpress": {
+      "name": "Bench Press",
+      "muscles": "Chest, shoulders, triceps",
+      "how": "Lie on the bench, shoulder blades pinched and tucked down. Lower the bar to the lower chest with control, press up and slightly back toward the rack.",
+      "video": "https://www.youtube.com/results?search_query=bench+press+form"
+    },
+    "benkpress mstopp": {
+      "name": "Pause Bench Press",
+      "muscles": "Chest, shoulders, triceps",
+      "how": "Bench press with a 1–2 second pause on the chest — no bounce. Trains strength off the chest and grooves the competition press command.",
+      "video": "https://www.youtube.com/results?search_query=pause+bench+press"
+    },
+    "benkpress ustopp": {
+      "name": "Bench Press (touch-and-go)",
+      "muscles": "Chest, shoulders, triceps",
+      "how": "Standard bench, no pause: light touch on the chest, immediate press up. Used for volume work.",
+      "video": "https://www.youtube.com/results?search_query=touch+and+go+bench+press"
+    },
+    "skråbenk mmanualer": {
+      "name": "Incline Dumbbell Bench Press",
+      "muscles": "Upper chest, shoulders, triceps",
+      "how": "Bench at 30–45°, a dumbbell in each hand. Lower until your elbows are just below the bench line, press up.",
+      "video": "https://www.youtube.com/results?search_query=incline+dumbbell+bench+press"
+    },
+    "franskpress": {
+      "name": "Lying Tricep Extension (Skull Crusher)",
+      "muscles": "Triceps",
+      "how": "Lying on a bench with a bar or EZ-bar held over your face. Bend only at the elbows to lower the bar toward your forehead, then extend back up.",
+      "video": "https://www.youtube.com/results?search_query=skull+crusher+form"
+    },
+    "leg extension": {
+      "name": "Leg Extension",
+      "muscles": "Quads",
+      "how": "Seated machine. Extend the knees fully, squeeze the quads at the top, control the way down.",
+      "video": "https://www.youtube.com/results?search_query=leg+extension+form"
+    },
+    "sittende lår curl": {
+      "name": "Seated Leg Curl",
+      "muscles": "Hamstrings",
+      "how": "Seated machine. Curl the pad down toward your glutes, squeeze the hamstrings, control back up.",
+      "video": "https://www.youtube.com/results?search_query=seated+leg+curl"
+    },
+    "biceps curl mhantel": {
+      "name": "Dumbbell Biceps Curl",
+      "muscles": "Biceps",
+      "how": "Stand tall, dumbbell in each hand. Curl up without swinging the body, squeeze at the top, lower under control.",
+      "video": "https://www.youtube.com/results?search_query=dumbbell+biceps+curl"
+    },
+    "enarms roing mhantel": {
+      "name": "One-Arm Dumbbell Row",
+      "muscles": "Lats, mid-back, biceps",
+      "how": "Hand and knee on a bench; the opposite arm hangs with a dumbbell. Row to the hip, drive the elbow back, squeeze the lat, lower with control.",
+      "video": "https://www.youtube.com/results?search_query=one+arm+dumbbell+row"
+    },
+    "flies mkabel": {
+      "name": "Cable Fly",
+      "muscles": "Chest",
+      "how": "Two cables at chest height. Slight bend in the elbows held the entire rep. Bring your hands together in front of the chest, squeeze, control back.",
+      "video": "https://www.youtube.com/results?search_query=cable+fly+chest"
+    }
+  },
+  "categories": {
+    "knebøy": "Squat",
+    "benkpress": "Bench press",
+    "markløft": "Deadlift",
+    "forside_lår": "Quads",
+    "bakside_lår": "Hamstrings",
+    "mage": "Abs",
+    "sete": "Glutes",
+    "rygg_horisontalt_drag": "Back (horizontal pull)",
+    "rygg_vertikalt_drag": "Back (vertical pull)",
+    "skuldre_bakside": "Rear delts",
+    "skuldre_side": "Side delts",
+    "skuldre_forside": "Front delts",
+    "bryst": "Chest",
+    "triceps": "Triceps",
+    "biceps": "Biceps"
+  },
+  "modifiers": {
+    "rpe": "Rate of Perceived Exertion (1–10). RPE 8 = ~2 reps left in the tank. RPE 10 = none.",
+    "rir": "Reps In Reserve. RIR 2 = stop 2 reps before failure.",
+    "amrap": "As Many Reps As Possible — go until form breaks.",
+    "tempo": "Lifting speed in seconds: eccentric-pause-concentric (e.g. 3-1-1 = 3s down, 1s pause, 1s up).",
+    "1rm": "One-Rep Max — the heaviest weight you can lift once with good form.",
+    "e1rm": "Estimated 1RM, calculated from reps × weight × RPE.",
+    "konkstil": "Competition style — same setup and execution you would use on the platform.",
+    "mstopp": "With a pause at the bottom (typically 1–3s).",
+    "ustopp": "No pause, touch-and-go.",
+    "sett": "Sets.",
+    "reps": "Repetitions per set.",
+    "vekt": "Weight.",
+    "kommentar": "Note from the coach.",
+    "tonnasje": "Total volume = sets × reps × weight.",
+    "sikt på å holde settene innenfor rpe-området, øk om du er under, senk vekta om du er over": "Coach's standing instruction: keep your working sets inside the prescribed RPE range. If you're below it, add weight; if you're above it, drop weight.",
+    "bruk første uke på å finne en passende vekt": "Coach's standing instruction: use week 1 to dial in a weight that lands in the prescribed RPE range — the program builds from there."
+  }
+}
