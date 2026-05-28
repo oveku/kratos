@@ -30,6 +30,8 @@ const state = {
   glossary: { entries: {}, categories: {}, modifiers: {} },
   workoutAssignments: {}, // filename -> { uke, dag }
   workoutSets: new Map(), // "uke-dag-normName" -> [{kg, reps, rpe, sett, date}]
+  exerciseIds: new Map(),  // normalizedName -> "01", "02", ...
+  exerciseById: new Map(), // "01" -> normalizedName
 };
 
 dom.year.textContent = new Date().getFullYear();
@@ -41,10 +43,32 @@ async function init() {
   state.glossary = await loadGlossary();
   restoreUploads();
   renderWeekNav();
-  await Promise.all([preloadAll(), loadWorkouts()]);
+  await preloadAll();
+  assignExerciseIds();
+  await loadWorkouts();
   applyUploads();
   pickInitialWeek();
   render();
+}
+
+// ---------- exercise IDs ----------
+
+function assignExerciseIds() {
+  let counter = 1;
+  for (const week of state.weeks) {
+    if (!week) continue;
+    for (const day of week.days) {
+      for (const ex of day.exercises) {
+        const key = normalizeName(ex.name);
+        if (!state.exerciseIds.has(key)) {
+          const id = String(counter).padStart(2, "0");
+          state.exerciseIds.set(key, id);
+          state.exerciseById.set(id, key);
+          counter++;
+        }
+      }
+    }
+  }
 }
 
 // ---------- glossary ----------
@@ -277,7 +301,14 @@ function parseWorkoutFile(text, filename, ukeNum, dagNum) {
     const reps = get(COL.REPS);
     const weight = get(COL.WEIGHT);
     if (!reps && !weight) continue;
-    const key = `${ukeNum}-${dagNum}-${normalizeName(name)}`;
+    // Resolve bare numeric ID (e.g. "03" or "3") to normalized exercise name
+    let normKey;
+    if (/^\d{1,3}$/.test(name)) {
+      const paddedId = name.padStart(2, "0");
+      normKey = state.exerciseById.get(paddedId) ?? state.exerciseById.get(name);
+    }
+    if (!normKey) normKey = normalizeName(name);
+    const key = `${ukeNum}-${dagNum}-${normKey}`;
     if (!state.workoutSets.has(key)) state.workoutSets.set(key, []);
     const rpeLow = get(COL.RPE_LOW);
     const rpeHigh = get(COL.RPE_HIGH);
@@ -524,6 +555,13 @@ function renderExercise(ex, ukeNum, dagNum) {
 
   const meta = document.createElement("div");
   meta.className = "exercise-meta";
+  const exerciseId = state.exerciseIds.get(normalizeName(ex.name));
+  if (exerciseId) {
+    const idSpan = document.createElement("span");
+    idSpan.className = "exercise-id";
+    idSpan.textContent = `#${exerciseId}`;
+    meta.appendChild(idSpan);
+  }
   if (categoryEnglish) meta.appendChild(metaChip("Category", categoryEnglish));
   if (entry?.muscles) meta.appendChild(metaChip("Trains", entry.muscles));
   if (ex.oneRM && ex.oneRM !== "0") meta.appendChild(metaChip("1RM", `${ex.oneRM} kg`, true));
