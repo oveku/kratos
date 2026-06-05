@@ -296,7 +296,9 @@ function parseWorkoutFile(text, filename, ukeNum, dagNum) {
   const matrix = parseCSV(text);
   for (const row of matrix) {
     const get = (i) => (row[i] || "").trim();
-    const name = get(COL.NAME);
+    // COL.NAME is col 3. Older logger versions wrote the exercise ID to col 2
+    // (COL.CATEGORY) instead. Fall back to col 2 when col 3 is empty.
+    const name = get(COL.NAME) || get(COL.CATEGORY);
     if (!name || /^dag\s*\d+/i.test(name)) continue;
     const reps = get(COL.REPS);
     const weight = get(COL.WEIGHT);
